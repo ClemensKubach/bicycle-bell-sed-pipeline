@@ -1,0 +1,11 @@
+tensorflow-addons
+tensorflow-datasets
+fsspec
+gcsfs
+audiomentations==0.24.0
+tensorflow_io==0.23.1
+tqdm
+pandas
+matplotlib
+google-colab
+google-cloud
