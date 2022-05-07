@@ -1,38 +1,46 @@
-# bicycle-bell-sed-pipeline
-
+# Bicycle Bell Sound Event Detection Pipeline
 **Author: Clemens Kubach**
 
+This repository is one of three for my bachelor thesis on "Development of an Embedded System 
+for Detecting Acoustic Alert Signals of Cyclists Using Neural Networks".
 
-## Description
-This repository contains the ML-pipeline for inspecting and preparing the datasets, training the neural networks and evaluating them on hold-out data for my bachelor thesis about atomatically detecting the sound event of cyclists using their bicycle bell.
+It contains the ML-pipeline for inspecting and preparing the datasets, training the neural networks and evaluating them on hold-out data for atomatically detecting the sound event of cyclists using their bicycle bell. Written in Python 3.9.
 
-Written in Python 3.9.
+The other related repositories are:
+- [bicycle-bell-sed-models](https://github.com/ClemensKubach/bicycle-bell-sed-models)
+- [bicycle-bell-sed-software](https://github.com/ClemensKubach/bicycle-bell-sed-software)
 
 
 ## Dependencies
-There are two types of dependencies used within for this project:
+There are two types of dependencies used for this project:
 - Python package dependencies
 - Data dependencies
 
-### Python package dependencies
-The pip dependencies can be installed via the requirements.txt. To train a model, you also have also have to install the package from the repository [bicycle-bell-sed-models](https://github.com/ClemensKubach/bicycle-bell-sed-models.git). If it is private, you need granted permissions to this repo and use a personal access token. Then, the following command can be executed:
-
+### Python Package Dependencies
+The pip dependencies can be installed via the `requirements.txt`. 
+To train a model, you also have to install the package from the repository [bicycle-bell-sed-models](https://github.com/ClemensKubach/bicycle-bell-sed-models.git). 
+You can install it via:
 ```shell
-$ pip install git+https://{gh_token}@github.com/ClemensKubach/bicycle-bell-sed-models.git
+pip install git+https://github.com/ClemensKubach/bicycle-bell-sed-models.git
 ```
 
-This is also used within the notebook. If it is public, no token is needed. Thus, you can directly run:
-
+If it is private, you need granted permissions to this repo and use a personal access token. 
+Then, the following command can be executed:
 ```shell
-$ pip install git+https://github.com/ClemensKubach/bicycle-bell-sed-models.git
+pip install git+https://{gh_token}@github.com/ClemensKubach/bicycle-bell-sed-models.git
 ```
+This is also already in use within the notebook.
 
-### Data dependencies
+
+### Data Dependencies
 The notebook supports two types of data sources to run its cells:
 - the Google Cloud Storage (GCS) bucket and
 - the exported bucket as Zip file
 
-To access the GCS bucket, you have to use the .json key when asked via the notebook. Thus, you have access to request data from this bucket. Alternatively, you can upload the folders in `thesis-bicycle-bell-sed-bucket` of the zip file to your own bucket.
+During the development GCS was used and therefore the code is mainly based on it. 
+However, it should also be feasible without problems or with only a few adjustments locally with the data from the zip backup.
+
+To access the GCS bucket, you have to use the .json key when asked via the notebook. A key file can be asked from the author. Thus, you have access to request data from this bucket. Alternatively, you can upload the folders in `thesis-bicycle-bell-sed-bucket` of the zip file to your own bucket.
 
 For using the local bucket from the zip file directly without GCS:
 - unpack the zip file
